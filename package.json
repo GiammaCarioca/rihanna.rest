@@ -1,0 +1,30 @@
+{
+  "name": "rihanna-quotes",
+  "version": "1.0.0",
+  "description": "A free REST API for random Rihanna quotes (Rihanna as a Service)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiammaCarioca/rihanna-quotes.git"
+  },
+  "keywords": [
+    "Rihanna",
+    "quotes"
+  ],
+  "author": "Thiago Giammattey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GiammaCarioca/rihanna-quotes/issues"
+  },
+  "homepage": "https://github.com/GiammaCarioca/rihanna-quotes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
