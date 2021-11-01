@@ -5,7 +5,7 @@
 ### Usage
 
 ```shell
-curl api.rihanna.rest
+curl https://rihanna-quotes.herokuapp.com/quotes
 ```
 
 ```json
