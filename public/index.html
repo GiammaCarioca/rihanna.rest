@@ -1,1 +1,46 @@
-Hello!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🫖 Rihanna serving</title>
+</head>
+<body>
+  <h1>Fenty Quotes</h1>
+
+  <blockquote id="quote" aria-live="polite" tabindex="0">
+    <em>Loading...</em>
+  </blockquote>
+
+  <button id="getQuote">Show Another Quote</button>
+
+  <script>
+    const quote = document.querySelector("#quote");
+    const btn = document.querySelector("#getQuote");
+    const endPoint = "https://rihanna-quotes.herokuapp.com/quotes";
+
+    function getQuote() {
+      fetch(endPoint)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject(response);
+        }
+      })
+      .then(data => quote.textContent = data[(Math.floor(Math.random() * (data.length - 0)) + 0)])
+      .catch(function(error) {
+        console.warn("Error:", error.status, error.statusText);
+        quote.setAttribute("data-error", "true");
+        quote.textContent = "Something went wrong. Please try again.";
+      });
+    }
+    
+    getQuote();
+    
+    btn.addEventListener("click", getQuote);
+    
+  </script>
+</body>
+</html>
