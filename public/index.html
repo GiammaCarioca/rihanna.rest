@@ -17,26 +17,27 @@
   <button id="getQuote">Show Another Quote</button>
 
   <script>
-    const quote = document.querySelector("#quote");
-    const btn = document.querySelector("#getQuote");
+    const quote = document.querySelector("#quote")
+    const btn = document.querySelector("#getQuote")
 
-    const base_url = "https://rihanna-quotes.herokuapp.com";
+    const base_url = "https://rihanna-quotes.herokuapp.com"
 
-    function getQuote() {
-      fetch(`${base_url}/quotes`)
-      .then(response => {
+    async function getQuote () {
+      try {
+        const response = await fetch(`${base_url}/quotes`)
+        
         if (response.ok) {
-          return response.json();
+          const data = await response.json()
+          quote.textContent = data.quote
+          return
         } else {
-          return Promise.reject(response);
+          return Promise.reject(response)
         }
-      })
-      .then(data => quote.textContent = data.quote)
-      .catch(function(error) {
-        console.warn("Error:", error.status, error.statusText);
+      } catch (error) {
+        console.warn("Error:", error.status, error.statusText)
         quote.setAttribute("data-error", "true");
-        quote.textContent = "Something went wrong. Please try again.";
-      });
+        quote.textContent = "Something went wrong. Please try again."
+      }
     }
     
     getQuote();
