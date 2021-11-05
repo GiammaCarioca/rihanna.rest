@@ -29,7 +29,7 @@
           return Promise.reject(response);
         }
       })
-      .then(data => quote.textContent = data[(Math.floor(Math.random() * (data.length - 0)) + 0)])
+      .then(data => quote.textContent = data)
       .catch(function(error) {
         console.warn("Error:", error.status, error.statusText);
         quote.setAttribute("data-error", "true");
