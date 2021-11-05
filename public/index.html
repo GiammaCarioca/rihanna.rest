@@ -18,10 +18,11 @@
   <script>
     const quote = document.querySelector("#quote");
     const btn = document.querySelector("#getQuote");
-    const endPoint = "https://rihanna-quotes.herokuapp.com/quotes";
+
+    const base_url = "https://rihanna-quotes.herokuapp.com";
 
     function getQuote() {
-      fetch(endPoint)
+      fetch(`${base_url}/quotes`)
       .then(response => {
         if (response.ok) {
           return response.json();
