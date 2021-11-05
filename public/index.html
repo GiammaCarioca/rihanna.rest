@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫖</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rihanna serving</title>
+  <title>rihanna.rest</title>
 </head>
 <body>
   <h1>Fenty Quotes</h1>
@@ -15,6 +15,18 @@
   </blockquote>
 
   <button id="getQuote">Show Another Quote</button>
+
+  <div>
+    <p>👋<a href="https://twitter.com/heygiammattey">@heygiammattey</a></p>
+    <p>
+      <a href="https://github.com/GiammaCarioca/rihanna-quotes">
+        <img
+        src="https://img.shields.io/github/stars/GiammaCarioca/rihanna-quotes?style=social"
+        alt="Github Link"
+        />
+      </a>
+    </p>
+  </div>
 
   <script>
     const quote = document.querySelector("#quote")
@@ -26,17 +38,17 @@
       try {
         const response = await fetch(`${base_url}/quotes`)
         
-        if (response.ok) {
-          const data = await response.json()
-          quote.textContent = data.quote
-          return
-        } else {
-          return Promise.reject(response)
-        }
+        if (!response.ok) return Promise.reject(response)
+
+        const data = await response.json()
+
+        if (!data) throw "No data"
+
+        quote.textContent = data.quote
       } catch (error) {
         console.warn("Error:", error.status, error.statusText)
         quote.setAttribute("data-error", "true");
-        quote.textContent = "Something went wrong. Please try again."
+        quote.textContent = "Something went wrong! Please try again. I have a Rihanna quote for you though... 'Never a failure, always a lesson'."
       }
     }
     
