@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <div class="container center">
-        <h1><a href="./">🫖 rihanna.rest</a></h1>
-        <span>A free REST API for random Rihanna quotes (Rihanna as a Service)</span>
-    </div>
 
+  <header class="container center">
+    <h1><a href="./">🫖 rihanna.rest</a></h1>
+    <h2>A free REST API for random Rihanna quotes (Rihanna as a Service)</h2>
+  </header>
+
+  <main>
     <div class="container">
       <figure class="quote card">
         <blockquote id="quote" aria-live="polite" tabindex="0" cite="">
@@ -22,7 +23,7 @@
             <em>Loading...</em>
           </p>
         </blockquote>
-        <figcaption>—Rihanna</figcaption>
+        <figcaption> — Rihanna</figcaption>
       </figure>
     </div>
 
@@ -30,21 +31,25 @@
       <button id="getQuote">Show Another Quote</button>
     </div>
 
-    <div class="container center">
-        <p>
-          👋
-          <a href="https://twitter.com/heygiammattey">@heygiammattey</a>
-        </p>
-        <p>
-          <a href="https://github.com/GiammaCarioca/rihanna-quotes">
-          <img
-          src="https://img.shields.io/github/stars/GiammaCarioca/rihanna-quotes?style=social"
-          alt="Github Link"
-          />
-          </a>
-        </p>
-    </div>
   </main>
+
+  <footer class="container center">
+    <p>
+      👋
+      <a href="https://twitter.com/heygiammattey">@heygiammattey</a>
+    </p>
+    
+    <!--
+    <p>
+      <a href="https://github.com/GiammaCarioca/rihanna.rest">
+      <img
+      src="https://img.shields.io/github/stars/GiammaCarioca/rihanna.rest?style=social"
+      alt="Github Link"
+      />
+      </a>
+    </p>
+    -->
+  </footer>
 
   <script>
     const quote = document.querySelector("#quote")
