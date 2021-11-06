@@ -6,27 +6,45 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫖</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rihanna.rest</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Fenty Quotes</h1>
+  <main>
+    <div class="container center">
+        <h1><a href="./">🫖 rihanna.rest</a></h1>
+        <span>A free REST API for random Rihanna quotes (Rihanna as a Service)</span>
+    </div>
 
-  <blockquote id="quote" aria-live="polite" tabindex="0">
-    <em>Loading...</em>
-  </blockquote>
+    <div class="container">
+      <figure class="quote card">
+        <blockquote id="quote" aria-live="polite" tabindex="0" cite="">
+          <p>
+            <em>Loading...</em>
+          </p>
+        </blockquote>
+        <figcaption>—Rihanna</figcaption>
+      </figure>
+    </div>
 
-  <button id="getQuote">Show Another Quote</button>
+    <div class="container center">
+      <button id="getQuote">Show Another Quote</button>
+    </div>
 
-  <div>
-    <p>👋<a href="https://twitter.com/heygiammattey">@heygiammattey</a></p>
-    <p>
-      <a href="https://github.com/GiammaCarioca/rihanna-quotes">
-        <img
-        src="https://img.shields.io/github/stars/GiammaCarioca/rihanna-quotes?style=social"
-        alt="Github Link"
-        />
-      </a>
-    </p>
-  </div>
+    <div class="container center">
+        <p>
+          👋
+          <a href="https://twitter.com/heygiammattey">@heygiammattey</a>
+        </p>
+        <p>
+          <a href="https://github.com/GiammaCarioca/rihanna-quotes">
+          <img
+          src="https://img.shields.io/github/stars/GiammaCarioca/rihanna-quotes?style=social"
+          alt="Github Link"
+          />
+          </a>
+        </p>
+    </div>
+  </main>
 
   <script>
     const quote = document.querySelector("#quote")
