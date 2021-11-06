@@ -8,4 +8,6 @@ router.get('/', quotesController.getRandomQuote)
 
 router.get('/all', quotesController.getAllQuotes)
 
+router.get('/search/:term', quotesController.searchQuotes)
+
 module.exports = router
