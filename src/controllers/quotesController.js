@@ -7,7 +7,6 @@ function getRandomQuotes(req, res) {
 
   if (parseInt(count) > quotes.length) {
     res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`)
-    return
   }
 
   const randomQuotes = getUniqueRange(parseInt(count), quotes.length).map(item => quotes[item])
@@ -22,7 +21,7 @@ function getAllQuotes(req, res) {
 function searchQuotes(req, res) {
   const term = req.params.term
 
-  const regExp = new RegExp(term, 'i')
+  const regExp = new RegExp(`\\b${term}\\b`, 'i')
 
   const foundQuotes  = quotes.filter(quote => quote && quote.match(regExp))
 
