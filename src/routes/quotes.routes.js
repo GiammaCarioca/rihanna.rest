@@ -4,13 +4,12 @@ const quotesController = require('../controllers/quotesController')
 
 const router = express.Router()
 
-router.get('/', quotesController.getRandomQuotes)
+router.get('/all', quotesController.getAllQuotes)
 
 router.get('/:count?', quotesController.getRandomQuotes)
 
-router.get('/all', quotesController.getAllQuotes)
-
 router.get('/search/:term', quotesController.searchQuotes)
 
+router.get('/', quotesController.getRandomQuotes)
 
 module.exports = router
