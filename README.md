@@ -6,7 +6,7 @@ Fenty is always serving! Not only looks and bops but also wisdom!
 
 ## Production host
 
-[https://www.rihanna.rest](https://www.rihanna.rest)
+[https://rihanna.rest](https://rihanna.rest)
 
 The `Access-Control-Allow-Origin` header is set to `*` so that you can make requests from any domain.
 
@@ -15,7 +15,7 @@ The `Access-Control-Allow-Origin` header is set to `*` so that you can make requ
 ### `GET /quotes`
 
 ```shell
-curl https://www.rihanna.rest/quotes
+curl https://rihanna.rest/quotes
 ```
 
 Returns an array with one random quote:
@@ -29,7 +29,7 @@ Returns an array with one random quote:
 ### `GET /quotes/<count>`
 
 ```shell
-curl https://www.rihanna.rest/quotes/2
+curl https://rihanna.rest/quotes/2
 ```
 
 Returns an array with `<count>` random quotes e.g. `GET /quotes/2`
@@ -44,7 +44,7 @@ Returns an array with `<count>` random quotes e.g. `GET /quotes/2`
 ### `GET /quotes/search/<term>`
 
 ```shell
-curl https://www.rihanna.rest/quotes/search/love
+curl https://rihanna.rest/quotes/search/love
 ```
 
 Returns an array of quotes matching `<term>` without case sensitivity e.g. `GET /quotes/search/love`
@@ -60,7 +60,7 @@ Returns an array of quotes matching `<term>` without case sensitivity e.g. `GET 
 ### `GET /quotes/all`
 
 ```shell
-curl https://www.rihanna.rest/quotes/all
+curl https://rihanna.rest/quotes/all
 ```
 
 Returns an array with all the quotes.
