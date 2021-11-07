@@ -1,4 +1,4 @@
-# 🫖 rihanna-rest
+# 🫖 rihanna.rest
 
 A free REST API for random Rihanna quotes.
 

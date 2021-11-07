@@ -38,8 +38,7 @@
       👋
       <a href="https://twitter.com/heygiammattey">@heygiammattey</a>
     </p>
-    
-    <!--
+
     <p>
       <a href="https://github.com/GiammaCarioca/rihanna.rest">
       <img
@@ -48,7 +47,6 @@
       />
       </a>
     </p>
-    -->
   </footer>
 
   <script>
@@ -67,7 +65,7 @@
 
         if (!data) throw "No data"
 
-        quote.textContent = data.quote
+        quote.textContent = data
       } catch (error) {
         console.warn("Error:", error.status, error.statusText)
         quote.setAttribute("data-error", "true");
