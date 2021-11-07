@@ -1,33 +1,21 @@
 :root {
-  --main: #262626;
-  --sub: #494949;
-}
-
-html,
-body {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  --primary: #052D38;
+  --secondary: #BDBBAD;
+  --tertiary: #7A958C;
 }
 
 body {
   margin: 0 auto;
   padding: 1rem;
   max-width: calc(550px + 2rem);
-  color: var(--main-text);
   box-sizing: border-box;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-weight: 500;
-  background-color: #052D38;
-}
-
-header {
-  /* background-color: orange; */
+  font-weight: 400;
+  background-color: var(--primary);
 }
 
 a {
-  /* color: rgb(0, 100, 200); */
-  color: #788C8C;
+  color: var(--tertiary);
   text-decoration: none;
 }
 
@@ -41,32 +29,23 @@ a {
 
 h1 {
   margin: 0.8rem 0;
-}
-
-h1 a,
-h1 a:hover {
-  /* color: var(--main); */
-  color: #BDBBAD;
-  text-decoration: none;
+  color: var(--secondary);
 }
 
 h2 {
-  /* color: var(--sub); */
-  color: #7A958C;
-  font-size: 0.8rem;
+  color: var(--tertiary);
+  font-size: 1rem;
   font-weight: 400;
 }
 
 p {
   margin: 0.75rem 0;
-  color: #052D38;
+  color: var(--primary);
 }
 
 .card {
   padding: 1rem;
-  /* background-color: hsl(0, 0%, 94%); */
-  background-color: #BDBBAD;
-  /* border: 1px solid hsl(0, 0%, 92%); */
+  background-color: var(--secondary);
   border-radius: 10px;
 }
 
@@ -80,41 +59,46 @@ figure {
 
 blockquote {
   margin: 0.5rem 0;
-  color: #052D38;
+  color: var(--primary);
 }
 
 figcaption {
   padding: 6px 8px;
-  font-size: 0.8rem;
+  color: var(--tertiary);
+  font-size: 1rem;
   font-weight: 400;
+  font-style: italic;
   position: absolute;
   bottom: 0;
   right: 0;
-  /* color: var(--sub); */
-  color: #788C8C;
-  border-radius: 0 0 10px 0;
 }
 
 button {
 background-color: transparent;
-border: 2px solid #BDBBAD;
+border: 2px solid var(--secondary);
 box-sizing: border-box;
-color: #BDBBAD;
+color: var(--secondary);
 cursor: pointer;
 display: inline-block;
 font-size: 16px;
 letter-spacing: .05em;
 line-height: 1.15;
 margin: 0;
-outline: medium none currentcolor;
-overflow: visible;
+width: 240px;
 padding: 12px 20px;
 text-align: center;
 text-rendering: optimizelegibility;
 text-transform: uppercase;
 }
 
-button:hover {
-  background-color: #BDBBAD;
-  color: #052D38;
+button:active {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+@media (hover: hover) {
+  button:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
 }
