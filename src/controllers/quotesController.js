@@ -7,6 +7,7 @@ function getRandomQuotes(req, res) {
 
   if (parseInt(count) > quotes.length) {
     res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`)
+    return
   }
 
   const randomQuotes = getUniqueRange(parseInt(count), quotes.length).map(item => quotes[item])
