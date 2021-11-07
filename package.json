@@ -1,7 +1,7 @@
 {
-  "name": "rihanna-quotes",
+  "name": "rihanna-rest",
   "version": "1.0.0",
-  "description": "A free REST API for random Rihanna quotes (Rihanna as a Service)",
+  "description": "A free REST API for random Rihanna quotes.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +14,7 @@
   },
   "keywords": [
     "Rihanna",
+    "Fenty",
     "quotes"
   ],
   "author": "Thiago Giammattey",
