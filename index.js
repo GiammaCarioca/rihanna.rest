@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 
-const quotesRouter = require('./routes/quotes.routes')
+const quotesRouter = require('./src/routes/quotes.routes')
 
 const app = express()
 
