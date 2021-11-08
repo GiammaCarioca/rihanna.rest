@@ -1,16 +1,16 @@
 const quotes = require('../../quotes.json')
 
 const getUniqueRange = require('../utils/getUniqueRange')
+const convertCount = require('../utils/convertCount')
 
 function getRandomQuotes(req, res) {
-  const count = req.params.count
+  const count = convertCount(req.params.count)
 
-  if (parseInt(count) > quotes.length) {
+  if (!!count && count > quotes.length) {
     res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`)
-    return
   }
 
-  const randomQuotes = getUniqueRange(parseInt(count), quotes.length).map(item => quotes[item])
+  const randomQuotes = getUniqueRange(count, quotes.length).map(item => quotes[item])
 
   res.json(randomQuotes)
 }
