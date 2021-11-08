@@ -5,12 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫖</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:title" content="rihanna.rest"/>
+  <meta property="og:site_name" content="rihanna.rest"/>
+  <meta property="og:url" content="https://rihanna.rest"/>
+  <meta property="og:description" content="A free REST API for Rihanna quotes"/>
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:creator" content="@heygiammattey"/>
+  <meta name="twitter:url" content="https://rihanna.rest"/>
+  <meta name="twitter:title" content="rihanna.rest"/>
+  <meta name="twitter:description" content="A free REST API for Rihanna quotes"/>
+
   <title>rihanna.rest</title>
   <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+  rel="stylesheet"
+  />
 </head>
 <body>
-
-  <header class="container center">
+  <header>
     <h1>
       <a href="https://github.com/GiammaCarioca/rihanna.rest" target="_blank">
         🫖 rihanna.rest
@@ -20,24 +38,23 @@
   </header>
 
   <main>
-    <div class="container">
-      <figure class="quote card">
-        <blockquote id="quote" aria-live="polite" tabindex="0" cite="">
-          <p>
-            <em>Getting a fresh quote...</em>
-          </p>
-        </blockquote>
-        <figcaption> — Rihanna</figcaption>
-      </figure>
-    </div>
+    <button id="tweet" class="btn btn-secondary">📢 tweet</button>
+    <figure class="card">
+      <blockquote id="quote" aria-live="polite" tabindex="0" cite="">
+        <p>
+          Never a failure, always a lesson.
+        </p>
+      </blockquote>
+      <figcaption> — Rihanna</figcaption>
+    </figure>
 
-    <div class="container center">
-      <button id="getQuote">Rihfresh!</button>
+    <div>
+      <button id="getQuote" class="btn btn-primary">Rihfresh!</button>
     </div>
 
   </main>
 
-  <footer class="container center">
+  <footer>
     <p>
       👋
       <a href="https://twitter.com/heygiammattey" target="_blank">@heygiammattey</a>
@@ -52,7 +69,5 @@
       </a>
     </p>
   </footer>
-
-  <script src="./index.js"></script>
 </body>
 </html>
