@@ -9,5 +9,4 @@ router.get('/:count?', quotesController.getRandomQuotes)
 router.get('/search/:term', quotesController.searchQuotes)
 router.get('/', quotesController.getRandomQuotes)
 
-
 module.exports = router

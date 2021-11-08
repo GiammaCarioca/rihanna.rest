@@ -2,6 +2,7 @@
   --primary: #BDBBAD;
   --secondary: #052D38;
   --tertiary: #47423d;
+  --error: #CE231D;
 }
 
 body {
@@ -14,11 +15,6 @@ body {
   background-color: var(--primary);
 }
 
-a {
-  color: var(--tertiary);
-  text-decoration: none;
-}
-
 .container {
   margin-bottom: 2rem;
 }
@@ -29,7 +25,6 @@ a {
 
 h1 {
   margin: 0.8rem 0;
-  color: var(--secondary);
 }
 
 h2 {
@@ -41,6 +36,15 @@ h2 {
 p {
   margin: 0.75rem 0;
   color: var(--primary);
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+footer a {
+  color: var(--tertiary);
 }
 
 .card {
@@ -64,7 +68,7 @@ blockquote {
 }
 
 figcaption {
-  padding: 6px 8px;
+  padding: 6px 16px;
   color: var(--primary);
   font-size: 1rem;
   font-weight: 400;
@@ -72,7 +76,7 @@ figcaption {
   position: absolute;
   bottom: 0;
   right: 0;
-  filter: brightness(75%);
+  filter: brightness(100%);
 }
 
 footer {
@@ -97,6 +101,12 @@ text-rendering: optimizelegibility;
 text-transform: uppercase;
 }
 
+[data-error] {
+  margin-bottom: 16px;
+  color: var(--error);
+  font-weight: 500;
+}
+
 @media (hover: hover) {
   button:hover {
     background-color: var(--secondary);
@@ -106,8 +116,8 @@ text-transform: uppercase;
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --primary: #052D38;
-  --secondary: #BDBBAD;
-  --tertiary: #7A958C;
+    --primary: #052D38;
+    --secondary: #BDBBAD;
+    --tertiary: #7A958C;
   }
 }

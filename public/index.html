@@ -11,7 +11,11 @@
 <body>
 
   <header class="container center">
-    <h1>🫖 rihanna.rest</h1>
+    <h1>
+      <a href="https://github.com/GiammaCarioca/rihanna.rest" target="_blank">
+        🫖 rihanna.rest
+      </a>
+    </h1>
     <h2>A free REST API for Rihanna quotes</h2>
   </header>
 
@@ -20,7 +24,7 @@
       <figure class="quote card">
         <blockquote id="quote" aria-live="polite" tabindex="0" cite="">
           <p>
-            <em>Loading...</em>
+            <em>Getting a fresh quote...</em>
           </p>
         </blockquote>
         <figcaption> — Rihanna</figcaption>
@@ -36,7 +40,7 @@
   <footer class="container center">
     <p>
       👋
-      <a href="https://twitter.com/heygiammattey">@heygiammattey</a>
+      <a href="https://twitter.com/heygiammattey" target="_blank">@heygiammattey</a>
     </p>
 
     <p>
@@ -49,34 +53,6 @@
     </p>
   </footer>
 
-  <script>
-    const quote = document.querySelector("#quote")
-    const btn = document.querySelector("#getQuote")
-
-    const base_url = "https://rihanna.rest"
-
-    async function getQuote () {
-      try {
-        const response = await fetch(`${base_url}/quotes`)
-        
-        if (!response.ok) return Promise.reject(response)
-
-        const data = await response.json()
-
-        if (!data) throw "No data"
-
-        quote.textContent = data
-      } catch (error) {
-        console.warn("Error:", error.status, error.statusText)
-        quote.setAttribute("data-error", "true");
-        quote.textContent = "Something went wrong! Please try again. I have a Rihanna quote for you though... 'Never a failure, always a lesson'."
-      }
-    }
-    
-    getQuote();
-    
-    btn.addEventListener("click", getQuote);
-    
-  </script>
+  <script src="./index.js"></script>
 </body>
 </html>
