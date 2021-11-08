@@ -1,7 +1,7 @@
 :root {
-  --primary: #052D38;
-  --secondary: #BDBBAD;
-  --tertiary: #7A958C;
+  --primary: #BDBBAD;
+  --secondary: #052D38;
+  --tertiary: #47423d;
 }
 
 body {
@@ -54,23 +54,29 @@ p {
 }
 
 figure {
-  min-height: 100px;
+  min-height: 120px;
 }
 
 blockquote {
   margin: 0.5rem 0;
+  padding-bottom: 6px;
   color: var(--primary);
 }
 
 figcaption {
   padding: 6px 8px;
-  color: var(--tertiary);
+  color: var(--primary);
   font-size: 1rem;
   font-weight: 400;
   font-style: italic;
   position: absolute;
   bottom: 0;
   right: 0;
+  filter: brightness(75%);
+}
+
+footer {
+  margin-top: 80px;
 }
 
 button {
@@ -84,21 +90,24 @@ font-size: 16px;
 letter-spacing: .05em;
 line-height: 1.15;
 margin: 0;
-width: 240px;
+width: 220px;
 padding: 12px 20px;
 text-align: center;
 text-rendering: optimizelegibility;
 text-transform: uppercase;
 }
 
-button:active {
-  background-color: var(--secondary);
-  color: var(--primary);
-}
-
 @media (hover: hover) {
   button:hover {
     background-color: var(--secondary);
     color: var(--primary);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --primary: #052D38;
+  --secondary: #BDBBAD;
+  --tertiary: #7A958C;
   }
 }
