@@ -1,12 +1,12 @@
-const express = require('express')
+import { Router } from 'express'
 
-const quotesController = require('../controllers/quotesController')
+import { getAllQuotes, getRandomQuotes, searchQuotes } from '../controllers/quotesController'
 
-const router = express.Router()
+const router = Router()
 
-router.get('/all', quotesController.getAllQuotes)
-router.get('/:count?', quotesController.getRandomQuotes)
-router.get('/search/:term', quotesController.searchQuotes)
-router.get('/', quotesController.getRandomQuotes)
+router.get('/all', getAllQuotes)
+router.get('/:count?', getRandomQuotes)
+router.get('/search/:term', searchQuotes)
+router.get('/', getRandomQuotes)
 
-module.exports = router
+export default router

@@ -1,4 +1,4 @@
-const quotes = require('../../quotes.json')
+const quotes = require('./../quotes.json')
 
 const getUniqueRange = require('../utils/getUniqueRange')
 const convertCount = require('../utils/convertCount')
@@ -6,7 +6,8 @@ const convertCount = require('../utils/convertCount')
 function getRandomQuotes(req, res) {
   const count = convertCount(req.params.count)
 
-  if (!!count && count > quotes.length) {
+  if (!!count && count > quotes.length)
+  {
     res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`)
   }
 
@@ -24,7 +25,7 @@ function searchQuotes(req, res) {
 
   const regExp = new RegExp(`\\b${term}\\b`, 'i')
 
-  const foundQuotes  = quotes.filter(quote => quote && quote.match(regExp))
+  const foundQuotes = quotes.filter(quote => quote && quote.match(regExp))
 
   res.send(foundQuotes.length !== 0 ? foundQuotes : `Term Not Found: ${term}`)
 }

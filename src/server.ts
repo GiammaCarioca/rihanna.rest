@@ -1,8 +1,8 @@
-const express = require('express')
-const cors = require('cors')
-const rateLimit = require('express-rate-limit')
+import express from 'express'
+import cors from 'cors'
+import rateLimit from 'express-rate-limit'
 
-const quotesRouter = require('./src/routes/quotes.routes')
+import quotesRouter from './routes/quotes.routes'
 
 const app = express()
 
@@ -13,7 +13,7 @@ const corsOptions = {
 const requestLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000,
   max: 100,
-  message: 'You have exceeded the 100 requests in 24 hrs limit!', 
+  message: 'You have exceeded the 100 requests in 24 hrs limit!',
   headers: true,
 })
 
