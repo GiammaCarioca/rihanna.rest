@@ -1,21 +1,21 @@
-const quotes = require('../../quotes.json')
+const quotes = require('../quotes.json');
 
 const getUniqueRange = (count, max = quotes.length) => {
-  let randomQuoteIndexes = []
+  const randomQuoteIndexes = [];
 
   if (isNaN(count)) {
-    const randomQuoteIndex = Math.floor(Math.random() * quotes.length)
-    return [randomQuoteIndex]
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    return [randomQuoteIndex];
   }
-  
+
   if (count && count <= max) {
     while (randomQuoteIndexes.length < count) {
-      const randomQuoteIndex = Math.floor(Math.random() * quotes.length)
-      
-      randomQuoteIndexes.includes(randomQuoteIndex) ? "" : randomQuoteIndexes.push(randomQuoteIndex)
+      const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+
+      randomQuoteIndexes.includes(randomQuoteIndex) ? '' : randomQuoteIndexes.push(randomQuoteIndex);
     }
   }
-  return randomQuoteIndexes
-}
+  return randomQuoteIndexes;
+};
 
-module.exports = getUniqueRange
+module.exports = getUniqueRange;
