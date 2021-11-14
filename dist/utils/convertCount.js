@@ -1,9 +1,13 @@
 "use strict";
 
-const convertCount = count => {
-  if (typeof count === "undefined") return;
-  if (isNaN(count)) throw 'Please insert a valid number.';
-  return Number(count);
-};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-module.exports = convertCount;
+const convertCount = count => Number(count); // if (typeof (count) === 'undefined') return 0;
+// if (isNaN(count)) throw new Error('Please insert a valid number.');
+
+
+var _default = convertCount;
+exports.default = _default;

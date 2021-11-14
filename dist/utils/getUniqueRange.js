@@ -1,23 +1,26 @@
 "use strict";
 
-const quotes = require('./../quotes.json');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-const getUniqueRange = (count, max = quotes.length) => {
-  let randomQuoteIndexes = [];
+var _quotes = _interopRequireDefault(require("../quotes.json"));
 
-  if (isNaN(count)) {
-    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-    return [randomQuoteIndex];
-  }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  if (count && count <= max) {
+const getUniqueRange = (count, max = _quotes.default.length) => {
+  const randomQuoteIndexes = [];
+
+  if (count <= max) {
     while (randomQuoteIndexes.length < count) {
-      const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-      randomQuoteIndexes.includes(randomQuoteIndex) ? "" : randomQuoteIndexes.push(randomQuoteIndex);
+      const randomQuoteIndex = Math.floor(Math.random() * _quotes.default.length);
+      randomQuoteIndexes.push(randomQuoteIndex);
     }
   }
 
   return randomQuoteIndexes;
 };
 
-module.exports = getUniqueRange;
+var _default = getUniqueRange;
+exports.default = _default;

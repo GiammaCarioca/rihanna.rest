@@ -1,35 +1,53 @@
 "use strict";
 
-const quotes = require('./../quotes.json');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-const getUniqueRange = require('../utils/getUniqueRange');
+var _quotes = _interopRequireDefault(require("../quotes.json"));
 
-const convertCount = require('../utils/convertCount');
+var _getUniqueRange = _interopRequireDefault(require("../utils/getUniqueRange"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function getRandomQuotes(req, res) {
-  const count = convertCount(req.params.count);
+  let randomQuotes = [];
+  const input = req.params.count;
 
-  if (!!count && count > quotes.length) {
-    res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`);
+  if (typeof input === 'undefined') {
+    randomQuotes = (0, _getUniqueRange.default)(1).map(item => _quotes.default[item]);
+    return res.json(randomQuotes);
   }
 
-  const randomQuotes = getUniqueRange(count, quotes.length).map(item => quotes[item]);
-  res.json(randomQuotes);
+  if (Number.isNaN(Number(input))) return res.send('Please insert a valid number.');
+
+  if (Number(input) > _quotes.default.length) {
+    return res.send(`Sorry, we got only ${_quotes.default.length} quotes for the time being.`);
+  }
+
+  randomQuotes = (0, _getUniqueRange.default)(Number(input)).map(item => _quotes.default[item]);
+  return res.json(randomQuotes);
 }
 
 function getAllQuotes(req, res) {
-  res.json(quotes);
+  res.json(_quotes.default);
 }
 
 function searchQuotes(req, res) {
-  const term = req.params.term;
+  const {
+    term
+  } = req.params;
   const regExp = new RegExp(`\\b${term}\\b`, 'i');
-  const foundQuotes = quotes.filter(quote => quote && quote.match(regExp));
+
+  const foundQuotes = _quotes.default.filter(quote => quote && quote.match(regExp));
+
   res.send(foundQuotes.length !== 0 ? foundQuotes : `Term Not Found: ${term}`);
 }
 
-module.exports = {
-  getRandomQuotes: getRandomQuotes,
-  getAllQuotes: getAllQuotes,
-  searchQuotes: searchQuotes
+var _default = {
+  getRandomQuotes,
+  getAllQuotes,
+  searchQuotes
 };
+exports.default = _default;

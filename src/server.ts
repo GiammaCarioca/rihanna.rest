@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const rateLimit = require('express-rate-limit');
+import express from 'express';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 
-const quotesRouter = require('./src/routes/quotes.routes');
+import quotesRouter from './routes/quotes.routes';
 
 const app = express();
 

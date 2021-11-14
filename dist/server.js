@@ -12,7 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const app = (0, _express.default)();
 const corsOptions = {
-  'methods': 'GET'
+  methods: 'GET'
 };
 const requestLimiter = (0, _expressRateLimit.default)({
   windowMs: 24 * 60 * 60 * 1000,

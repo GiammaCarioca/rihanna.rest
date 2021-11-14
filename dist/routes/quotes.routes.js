@@ -5,14 +5,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _express = require("express");
+var _express = _interopRequireDefault(require("express"));
 
-var _quotesController = require("../controllers/quotesController");
+var _quotesController = _interopRequireDefault(require("../controllers/quotesController"));
 
-const router = (0, _express.Router)();
-router.get('/all', _quotesController.getAllQuotes);
-router.get('/:count?', _quotesController.getRandomQuotes);
-router.get('/search/:term', _quotesController.searchQuotes);
-router.get('/', _quotesController.getRandomQuotes);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// eslint-disable-next-line import/no-unresolved
+const router = _express.default.Router();
+
+router.get('/all', _quotesController.default.getAllQuotes);
+router.get('/:count?', _quotesController.default.getRandomQuotes);
+router.get('/search/:term', _quotesController.default.searchQuotes);
+router.get('/', _quotesController.default.getRandomQuotes);
 var _default = router;
 exports.default = _default;
