@@ -1,7 +1,9 @@
-const quotes = require('./../quotes.json')
+"use strict";
+
+const quotes = require('./../quotes.json');
 
 const getUniqueRange = (count, max = quotes.length) => {
-  const randomQuoteIndexes = [];
+  let randomQuoteIndexes = [];
 
   if (isNaN(count)) {
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
@@ -11,10 +13,10 @@ const getUniqueRange = (count, max = quotes.length) => {
   if (count && count <= max) {
     while (randomQuoteIndexes.length < count) {
       const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-
-      randomQuoteIndexes.includes(randomQuoteIndex) ? '' : randomQuoteIndexes.push(randomQuoteIndex);
+      randomQuoteIndexes.includes(randomQuoteIndex) ? "" : randomQuoteIndexes.push(randomQuoteIndex);
     }
   }
+
   return randomQuoteIndexes;
 };
 
