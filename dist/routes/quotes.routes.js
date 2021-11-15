@@ -11,7 +11,6 @@ var _quotesController = _interopRequireDefault(require("../controllers/quotesCon
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// eslint-disable-next-line import/no-unresolved
 const router = _express.default.Router();
 
 router.get('/all', _quotesController.default.getAllQuotes);

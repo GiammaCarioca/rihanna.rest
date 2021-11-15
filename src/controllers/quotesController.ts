@@ -4,24 +4,18 @@ import quotes from '../quotes.json';
 import getUniqueRange from '../utils/getUniqueRange';
 
 function getRandomQuotes(req: Request, res: Response) {
-  let randomQuotes = [];
+  const { count = 1 } = req.params;
+  const numOfQuotes = Number(count);
+  const randomQuotes = [];
 
-  const input = req.params.count;
+  if (Number.isNaN(numOfQuotes) || typeof count === 'undefined') return res.send('Please insert a valid number.');
 
-  if (typeof input === 'undefined')
-  {
-    randomQuotes = getUniqueRange(1).map((item) => quotes[item]);
-    return res.json(randomQuotes);
-  }
-
-  if (Number.isNaN(Number(input))) return res.send('Please insert a valid number.');
-
-  if (Number(input) > quotes.length)
+  if (numOfQuotes > quotes.length)
   {
     return res.send(`Sorry, we got only ${quotes.length} quotes for the time being.`);
   }
 
-  randomQuotes = getUniqueRange(Number(input)).map((item) => quotes[item]);
+  randomQuotes.push(...getUniqueRange(numOfQuotes).map((item) => quotes[item]));
   return res.json(randomQuotes);
 }
 
