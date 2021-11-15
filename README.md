@@ -1,6 +1,6 @@
 # 🫖 rihanna.rest
 
-A free REST API for random Rihanna quotes.
+A free REST API for Rihanna quotes.
 
 Fenty is always serving! Not only looks and bops but also wisdom!
 
@@ -71,8 +71,9 @@ Once you've cloned this repo, run `npm install` to install the dependencies.
 
 Then you can run:
 
-* `npm run dev`: executes the server with Nodemon
-* `npm start`: runs the server
+* `npm build`: builds the TypeScript source code
+* `npm start`: runs the compiled server
+* `npm run dev`: executes the server with ts-node-dev
 
 ## License
 
