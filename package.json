@@ -5,7 +5,6 @@
   "main": "dist/server.js",
   "engines": { "node": "16.10.0" },
   "scripts": {
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
     "tsc": "./node_modules/typescript/bin/tsc",
