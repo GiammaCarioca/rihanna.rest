@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
@@ -19,7 +20,7 @@ const requestLimiter = rateLimit({
 
 app.use(cors(corsOptions));
 app.use(requestLimiter);
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/quotes', quotesRouter);
 
 app.listen(process.env.PORT || 3000);
